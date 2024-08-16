@@ -30,7 +30,14 @@ N = 500
 
 
 def getDataPoint(quote):
-    """Produce all the needed values to generate a datapoint"""
+    """
+    Produce all the needed values to generate a datapoint
+
+    :param quote: The quote to process
+
+    :returns: A tuple with the following values: stock, bid_price, ask_price, price
+    """
+
     stock = quote["stock"]
     bid_price = float(quote["top_bid"]["price"])
     ask_price = float(quote["top_ask"]["price"])
@@ -39,7 +46,14 @@ def getDataPoint(quote):
 
 
 def getRatio(price_a, price_b):
-    """Get ratio of price_a and price_b"""
+    """
+    Get ratio of price_a and price_b
+
+    :param price_a: The first price
+    :param price_b: The second price
+
+    :returns: The ratio of price_a and price_b
+    """
     try:
         return price_a / price_b
     except ZeroDivisionError:
@@ -55,7 +69,6 @@ if __name__ == "__main__":
             urllib.request.urlopen(QUERY.format(random.random())).read()
         )
 
-        """ ----------- Update to get the ratio --------------- """
         prices = {}
         for quote in quotes:
             stock, bid_price, ask_price, price = getDataPoint(quote)
