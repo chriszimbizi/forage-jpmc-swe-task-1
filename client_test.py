@@ -62,8 +62,5 @@ class ClientTest(unittest.TestCase):
       self.assertRaises(ZeroDivisionError, getRatio, 1, 0)
 
 
-
-
-
 if __name__ == '__main__':
     unittest.main()
