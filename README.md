@@ -1,4 +1,4 @@
-# Task 2: Interface with a Stock Price Data Feed
+# Task 1: Interface with a Stock Price Data Feed
 
 ## Overview
 
